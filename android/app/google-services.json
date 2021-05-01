@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "478453455877",
+    "project_id": "todo-cubit",
+    "storage_bucket": "todo-cubit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478453455877:android:53930654bc850f2cc4506c",
+        "android_client_info": {
+          "package_name": "com.akil.aws_auth.aws_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478453455877-4nnf3evpr74f5i3p6a7c4r6po00ui73k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akil.aws_auth.aws_auth",
+            "certificate_hash": "cc1479deb329370d4f0dac7511c72ff5d00d3bdf"
+          }
+        },
+        {
+          "client_id": "478453455877-3cn3kkv86nvtu39k9ofhvpag2lpjghth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6EPgDNNiGPKY27pCaVFBaLw2m4ZN_CgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478453455877-3cn3kkv86nvtu39k9ofhvpag2lpjghth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
