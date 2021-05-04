@@ -26,5 +26,5 @@ class AuthenticatedState extends AuthState {
 class ErrorAuthState extends AuthState {
   ErrorAuthState(this.exception);
 
-  final Exception exception;
+  final String exception;
 }

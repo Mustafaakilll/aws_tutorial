@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'auth_cubit/auth_cubit.dart';
 import 'todo_cubit/todo_cubit.dart';
+import 'view/auth_page.dart';
 import 'view/confirm_page.dart';
 import 'view/loading_view.dart';
-import 'view/sign_in_page.dart';
 import 'view/todo_page.dart';
 
 class AppNavigator extends StatelessWidget {
@@ -14,11 +14,9 @@ class AppNavigator extends StatelessWidget {
         builder: (context, state) => Navigator(
           pages: [
             if (state is UnknownState) MaterialPage(child: LoadingView()),
-            if (state is ConfirmState)
-              MaterialPage(child: ConfirmPage(state.username)),
-            if (state is UnauthenticatedState)
-              MaterialPage(child: SignInPage()),
-            if (state is ErrorAuthState) MaterialPage(child: SignInPage()),
+            if (state is ConfirmState) MaterialPage(child: ConfirmPage(state.username)),
+            if (state is UnauthenticatedState) MaterialPage(child: AuthPage()),
+            if (state is ErrorAuthState) MaterialPage(child: AuthPage()),
             if (state is AuthenticatedState)
               MaterialPage(
                 child: BlocProvider(

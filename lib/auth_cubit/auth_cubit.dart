@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import '../auth_cubit/auth_repository.dart';
@@ -18,19 +19,18 @@ class AuthCubit extends Cubit<AuthState> {
         emit(UnauthenticatedState());
       }
     } on AuthError catch (e) {
-      emit(ErrorAuthState(e));
+      emit(ErrorAuthState(e.details));
     }
   }
 
   Future<void> confirmAccount(String username, String confirmationCode) async {
     try {
-      final _isConfirmed =
-          await _authRepository.confirm(username, confirmationCode);
+      final _isConfirmed = await _authRepository.confirm(username, confirmationCode);
       if (_isConfirmed) {
         emit(UnauthenticatedState());
       }
     } on AuthError catch (e) {
-      emit(ErrorAuthState(e));
+      emit(ErrorAuthState(e.details));
     }
   }
 
@@ -43,7 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(UnauthenticatedState());
       }
     } on AuthError catch (e) {
-      emit(ErrorAuthState(e));
+      emit(ErrorAuthState(e.details));
     }
   }
 
@@ -52,7 +52,7 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.signOut();
       emit(UnauthenticatedState());
     } on AuthError catch (e) {
-      emit(ErrorAuthState(e));
+      emit(ErrorAuthState(e.details));
     }
   }
 
@@ -64,8 +64,8 @@ class AuthCubit extends Cubit<AuthState> {
       } else {
         emit(UnauthenticatedState());
       }
-    } on AuthError catch (e) {
-      emit(ErrorAuthState(e));
+    } on Exception {
+      emit(UnauthenticatedState());
     }
   }
 }

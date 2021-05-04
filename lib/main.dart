@@ -31,7 +31,8 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Todo App',
+        debugShowCheckedModeBanner: false,
         home: BlocProvider(
           create: (context) => AuthCubit()..attemptAutoSignIn(),
           child: _amplifyConfigured ? AppNavigator() : LoadingView(),
