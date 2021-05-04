@@ -12,7 +12,7 @@ class ConfirmPage extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
 
   @override
-  Widget build(BuildContext context) => BlocListener(
+  Widget build(BuildContext context) => BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is ErrorAuthState) {
             ScaffoldMessenger.of(context).showSnackBar(
